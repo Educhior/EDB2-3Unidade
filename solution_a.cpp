@@ -1,10 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
+int main() {    
     int n;
     cin >> n;
     
@@ -16,11 +14,10 @@ int main() {
     int maxVal = -1;
     int result = -1;
     
-    // Solução O(n²) - ineficiente
+    
     for (int i = 0; i < n; i++) {
         bool isUnique = true;
         
-        // Para cada elemento, verifica todos os outros
         for (int j = 0; j < n; j++) {
             if (i != j && a[i] == a[j]) {
                 isUnique = false;
@@ -28,10 +25,9 @@ int main() {
             }
         }
         
-        // Se é único e é maior que o máximo atual
         if (isUnique && a[i] > maxVal) {
             maxVal = a[i];
-            result = i + 1; // retorna 1-indexado
+            result = i + 1;
         }
     }
     
